@@ -1,0 +1,19 @@
+{
+    "input": {
+        "filename": "./data/90-10 beads BP-clear-NLO-ex810_100xoil_fesl700 felh700 power 2mw step_0.26 pomiar 4",
+        "area": {
+            "min": 0,
+            "max": 25
+        }
+    },
+    "output": {
+        "filename": "data/image.png",
+        "figure_size": [8, 8]
+    },
+    "display": {
+        "extent": [0, 25, 0, 25],
+        "cmap": "Blues_r",
+        "xlabel": "X [$\\mu$m]",
+        "ylabel": "Y [$\\mu$m]"
+    }
+} 
