@@ -52,10 +52,14 @@ def save_image(image_matrix: NDArray, config: Dict[str, Any]) -> None:
     # Create figure
     plt.figure(figsize=tuple(config['output']['figure_size']))
 
-    # Flip and rotate
-    image_matrix = np.flipud(image_matrix)
-    image_matrix = np.fliplr(image_matrix)
+    # rotate flip, save to file to be able to plot in origin, flip
     image_matrix = np.rot90(image_matrix, k=-1)
+    image_matrix = np.fliplr(image_matrix)
+
+    txt_output_filename = config['output']['filename'].replace('.png', '.txt')
+    np.savetxt(txt_output_filename, image_matrix)
+
+    image_matrix = np.flipud(image_matrix)
 
     # Calculate extent based on area if specified
     area = config['input'].get('area')
